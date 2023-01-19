@@ -1,13 +1,17 @@
 import React from 'react';
 import styled from 'styled-components';
+import { FaGithub } from 'react-icons/fa'
 
 const Footer = () => {
   return <Wrapper>
-    <h5>
-      &copy; {new Date().getFullYear()}
-      <span>ComfySloth</span>
-    </h5>
-    <h5>Все права защищены</h5>
+    <div className='rights'>
+      <h5>
+        &copy;{new Date().getFullYear()}
+<span> ComfySloth</span>
+      </h5>
+      <h5>Все права защищены</h5>
+    </div>
+    <a href="https://github.com/evkondr/react-e-commerce-app" target="_blank" rel="noopener noreferrer"><FaGithub /> Исходный Код</a>
   </Wrapper>
 };
 
@@ -30,8 +34,20 @@ const Wrapper = styled.footer`
     text-transform: none;
     line-height: 1.25;
   }
-  @media (min-width: 776px) {
-    flex-direction: row;
+  a{
+    display: flex;
+    align-items: center;
+    color: var(--clr-white);
+    margin-top: 0.5rem;
+    svg{
+      margin-right: 0.5rem;
+    }
+  }
+  .rights{
+    display: flex;
+    @media (min-width: 776px) {
+      flex-direction: row;
+    }
   }
 `;
 
